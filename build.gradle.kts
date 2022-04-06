@@ -1,6 +1,6 @@
 plugins {
     `java-library`
-    kotlin("jvm") version "1.5.0"
+    kotlin("jvm") version "1.6.0"
     signing
     `maven-publish`
     id("io.github.gradle-nexus.publish-plugin") version "1.1.0"
@@ -18,7 +18,7 @@ testSets {
 }
 
 
-val jacksonVersion = "2.11.4"
+val jacksonVersion = "2.13.2"
 
 
 configurations {
@@ -34,7 +34,7 @@ tasks.named("check") {
 
 dependencies {
     api("com.fasterxml.jackson.core:jackson-databind:$jacksonVersion")
-    api("javax.validation:validation-api:2.0.1.Final")
+    api("jakarta.validation:jakarta.validation-api:3.0.1")
 
     compileOnly("com.google.code.findbugs:jsr305:3.0.2")
     compileOnly(kotlin("stdlib-jdk8"))
@@ -47,17 +47,17 @@ dependencies {
 
     testImplementation("org.junit.jupiter:junit-jupiter-api")
     testImplementation("org.junit.jupiter:junit-jupiter-params")
-    testImplementation("com.willowtreeapps.assertk:assertk-jvm:0.24")
+    testImplementation("com.willowtreeapps.assertk:assertk-jvm:0.25")
     testImplementation("com.fasterxml.jackson.datatype:jackson-datatype-jdk8:$jacksonVersion")
     testImplementation("com.fasterxml.jackson.datatype:jackson-datatype-jsr310:$jacksonVersion")
     testImplementation("com.fasterxml.jackson.module:jackson-module-kotlin:$jacksonVersion")
-    testImplementation("org.hibernate.validator:hibernate-validator:6.2.0.Final")
+    testImplementation("org.hibernate.validator:hibernate-validator:7.0.4.Final")
 
     testRuntimeOnly("org.junit.jupiter:junit-jupiter-engine")
     testRuntimeOnly("ch.qos.logback:logback-classic:1.2.3")
 
     "javaOnlyTestImplementation"("org.junit.jupiter:junit-jupiter-api")
-    "javaOnlyTestImplementation"("org.hibernate.validator:hibernate-validator:6.2.0.Final")
+    "javaOnlyTestImplementation"("org.hibernate.validator:hibernate-validator:7.0.4.Final")
 }
 
 

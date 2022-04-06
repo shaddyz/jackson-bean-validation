@@ -1,9 +1,10 @@
 package org.unbrokendome.jackson.beanvalidation.path;
 
+import jakarta.validation.ElementKind;
+import jakarta.validation.Path;
+
 import javax.annotation.Nonnull;
 import javax.annotation.Nullable;
-import javax.validation.ElementKind;
-import javax.validation.Path;
 
 
 final class BeanNode extends AbstractNode implements Path.BeanNode {

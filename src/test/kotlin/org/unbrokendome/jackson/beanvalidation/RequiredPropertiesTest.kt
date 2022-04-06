@@ -5,9 +5,9 @@ import assertk.assertThat
 import assertk.assertions.hasSize
 import com.fasterxml.jackson.annotation.JsonCreator
 import com.fasterxml.jackson.annotation.JsonProperty
+import jakarta.validation.constraints.NotNull
 import org.junit.jupiter.api.Test
 import org.unbrokendome.jackson.beanvalidation.assertions.hasViolation
-import javax.validation.constraints.NotNull
 
 
 class RequiredPropertiesTest : AbstractValidationTest() {

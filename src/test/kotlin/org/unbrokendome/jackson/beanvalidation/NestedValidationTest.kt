@@ -4,6 +4,8 @@ import assertk.assertThat
 import assertk.assertions.hasSize
 import com.fasterxml.jackson.databind.DeserializationFeature
 import com.fasterxml.jackson.databind.ObjectMapper
+import jakarta.validation.Valid
+import jakarta.validation.constraints.NotNull
 import org.junit.jupiter.api.Test
 import org.junit.jupiter.api.extension.ExtensionContext
 import org.junit.jupiter.params.ParameterizedTest
@@ -12,8 +14,6 @@ import org.junit.jupiter.params.provider.ArgumentsProvider
 import org.junit.jupiter.params.provider.ArgumentsSource
 import org.unbrokendome.jackson.beanvalidation.assertions.hasViolation
 import java.util.stream.Stream
-import javax.validation.Valid
-import javax.validation.constraints.NotNull
 
 
 class NestedValidationTest : AbstractValidationTest() {

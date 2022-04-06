@@ -4,6 +4,7 @@ import assertk.assertThat
 import assertk.assertions.hasSize
 import com.fasterxml.jackson.databind.DeserializationFeature
 import com.fasterxml.jackson.module.kotlin.KotlinModule
+import jakarta.validation.constraints.NotNull
 import org.junit.jupiter.api.BeforeEach
 import org.junit.jupiter.api.Nested
 import org.junit.jupiter.api.Test
@@ -14,14 +15,13 @@ import org.junit.jupiter.params.provider.ArgumentsProvider
 import org.junit.jupiter.params.provider.ArgumentsSource
 import org.unbrokendome.jackson.beanvalidation.assertions.hasViolation
 import java.util.stream.Stream
-import javax.validation.constraints.NotNull
 
 
 class KotlinValidationTest : AbstractValidationTest() {
 
     @BeforeEach
     fun registerKotlinModule() {
-        objectMapper.registerModule(KotlinModule())
+        objectMapper.registerModule(KotlinModule.Builder().build())
         objectMapper.enable(DeserializationFeature.FAIL_ON_NULL_FOR_PRIMITIVES)
         objectMapper.configure(DeserializationFeature.WRAP_EXCEPTIONS, false)
     }

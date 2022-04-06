@@ -12,20 +12,16 @@ import com.fasterxml.jackson.databind.deser.impl.NullsConstantProvider;
 import com.fasterxml.jackson.databind.deser.impl.PropertyBasedCreator;
 import com.fasterxml.jackson.databind.exc.MismatchedInputException;
 import com.fasterxml.jackson.databind.util.TokenBuffer;
+import jakarta.validation.*;
+import jakarta.validation.constraints.NotNull;
+import jakarta.validation.metadata.ConstraintDescriptor;
 import org.unbrokendome.jackson.beanvalidation.path.PathBuilder;
 import org.unbrokendome.jackson.beanvalidation.violation.ConstraintViolationUtils;
 
 import javax.annotation.Nonnull;
 import javax.annotation.Nullable;
-import javax.validation.*;
-import javax.validation.constraints.NotNull;
-import javax.validation.metadata.ConstraintDescriptor;
 import java.io.IOException;
-import java.util.Collections;
-import java.util.HashSet;
-import java.util.LinkedHashSet;
-import java.util.Set;
-import java.util.Stack;
+import java.util.*;
 import java.util.stream.Collectors;
 import java.util.stream.StreamSupport;
 

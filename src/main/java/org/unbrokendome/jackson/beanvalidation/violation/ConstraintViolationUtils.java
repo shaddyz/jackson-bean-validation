@@ -1,10 +1,11 @@
 package org.unbrokendome.jackson.beanvalidation.violation;
 
+import jakarta.validation.ConstraintViolation;
+import jakarta.validation.MessageInterpolator;
+import jakarta.validation.Path;
+import jakarta.validation.metadata.ConstraintDescriptor;
+
 import javax.annotation.Nullable;
-import javax.validation.ConstraintViolation;
-import javax.validation.MessageInterpolator;
-import javax.validation.Path;
-import javax.validation.metadata.ConstraintDescriptor;
 
 
 public final class ConstraintViolationUtils {

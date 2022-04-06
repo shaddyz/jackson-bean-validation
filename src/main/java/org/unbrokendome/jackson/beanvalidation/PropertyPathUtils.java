@@ -4,11 +4,11 @@ package org.unbrokendome.jackson.beanvalidation;
 import com.fasterxml.jackson.core.JsonStreamContext;
 import com.fasterxml.jackson.databind.deser.CreatorProperty;
 import com.fasterxml.jackson.databind.deser.SettableBeanProperty;
+import jakarta.validation.Path;
 import org.unbrokendome.jackson.beanvalidation.path.PathBuilder;
 
 import javax.annotation.Nonnull;
 import javax.annotation.Nullable;
-import javax.validation.Path;
 import java.lang.reflect.Constructor;
 import java.util.Collection;
 

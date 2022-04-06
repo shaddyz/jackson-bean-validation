@@ -1,8 +1,9 @@
 package org.unbrokendome.jackson.beanvalidation;
 
+import jakarta.validation.Payload;
+import jakarta.validation.constraints.NotNull;
+
 import javax.annotation.Nullable;
-import javax.validation.Payload;
-import javax.validation.constraints.NotNull;
 import java.lang.annotation.Annotation;
 
 
@@ -104,7 +105,7 @@ final class JsonConstraints {
     private static final class DefaultNotNull
             extends AbstractDefaultAnnotation implements NotNull {
 
-        private static final String DEFAULT_MESSAGE = "{javax.validation.constraints.NotNull.message}";
+        private static final String DEFAULT_MESSAGE = "{jakarta.validation.constraints.NotNull.message}";
 
         @Override
         public String message() {

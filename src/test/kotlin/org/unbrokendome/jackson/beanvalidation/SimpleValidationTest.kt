@@ -2,11 +2,10 @@ package org.unbrokendome.jackson.beanvalidation
 
 import assertk.assertThat
 import assertk.assertions.hasSize
+import jakarta.validation.constraints.NotNull
 import org.junit.jupiter.api.Assertions.assertNotNull
 import org.junit.jupiter.api.Test
 import org.unbrokendome.jackson.beanvalidation.assertions.hasViolation
-import java.io.IOException
-import javax.validation.constraints.NotNull
 
 
 class SimpleValidationTest : AbstractValidationTest() {

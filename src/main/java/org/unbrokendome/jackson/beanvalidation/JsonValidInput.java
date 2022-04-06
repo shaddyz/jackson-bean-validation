@@ -1,9 +1,9 @@
 package org.unbrokendome.jackson.beanvalidation;
 
 import com.fasterxml.jackson.databind.exc.MismatchedInputException;
+import jakarta.validation.Payload;
+import jakarta.validation.metadata.ConstraintDescriptor;
 
-import javax.validation.Payload;
-import javax.validation.metadata.ConstraintDescriptor;
 import java.lang.annotation.Documented;
 import java.lang.annotation.Retention;
 import java.lang.annotation.RetentionPolicy;

@@ -1,9 +1,10 @@
 package org.unbrokendome.jackson.beanvalidation.violation;
 
+import jakarta.validation.Path;
+import jakarta.validation.metadata.ConstraintDescriptor;
+
 import javax.annotation.Nonnull;
 import javax.annotation.Nullable;
-import javax.validation.Path;
-import javax.validation.metadata.ConstraintDescriptor;
 
 
 final class ConstraintViolationImpl<T> extends AbstractRootedConstraintViolation<T> {

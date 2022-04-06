@@ -1,9 +1,10 @@
 package org.unbrokendome.jackson.beanvalidation.violation;
 
+import jakarta.validation.MessageInterpolator;
+import jakarta.validation.ValidationException;
+import jakarta.validation.metadata.ConstraintDescriptor;
+
 import javax.annotation.Nullable;
-import javax.validation.MessageInterpolator;
-import javax.validation.ValidationException;
-import javax.validation.metadata.ConstraintDescriptor;
 
 
 final class MessageInterpolatorContextImpl implements MessageInterpolator.Context {

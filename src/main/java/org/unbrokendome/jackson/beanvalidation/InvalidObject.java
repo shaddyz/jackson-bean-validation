@@ -1,6 +1,7 @@
 package org.unbrokendome.jackson.beanvalidation;
 
-import javax.validation.ConstraintViolation;
+import jakarta.validation.ConstraintViolation;
+
 import java.util.Collections;
 import java.util.LinkedHashSet;
 import java.util.Set;

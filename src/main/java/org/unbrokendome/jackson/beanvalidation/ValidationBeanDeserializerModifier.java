@@ -7,9 +7,9 @@ import com.fasterxml.jackson.databind.deser.*;
 import com.fasterxml.jackson.databind.deser.impl.FieldProperty;
 import com.fasterxml.jackson.databind.deser.impl.MethodProperty;
 import com.fasterxml.jackson.databind.deser.std.StdValueInstantiator;
+import jakarta.validation.Validator;
+import jakarta.validation.ValidatorFactory;
 
-import javax.validation.Validator;
-import javax.validation.ValidatorFactory;
 import java.util.ArrayList;
 import java.util.List;
 

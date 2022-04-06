@@ -3,14 +3,13 @@ package org.unbrokendome.jackson.beanvalidation;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.databind.ObjectMapper;
+import jakarta.validation.ConstraintViolationException;
+import jakarta.validation.Validation;
+import jakarta.validation.ValidatorFactory;
+import jakarta.validation.constraints.NotNull;
 import org.hibernate.validator.messageinterpolation.ParameterMessageInterpolator;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
-
-import javax.validation.ConstraintViolationException;
-import javax.validation.Validation;
-import javax.validation.ValidatorFactory;
-import javax.validation.constraints.NotNull;
 
 class JavaOnlyTest {
 
