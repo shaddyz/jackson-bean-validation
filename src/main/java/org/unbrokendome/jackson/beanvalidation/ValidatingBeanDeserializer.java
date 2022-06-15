@@ -1,5 +1,6 @@
 package org.unbrokendome.jackson.beanvalidation;
 
+import com.fasterxml.jackson.core.JsonParseException;
 import com.fasterxml.jackson.core.JsonParser;
 import com.fasterxml.jackson.core.JsonToken;
 import com.fasterxml.jackson.core.JsonTokenId;
@@ -130,21 +131,24 @@ class ValidatingBeanDeserializer extends BeanDeserializer {
      */
     @Override
     public Object deserialize(JsonParser p, DeserializationContext ctxt) throws IOException {
-
-        if (validationAnnotation == null) {
-            return super.deserialize(p, ctxt);
-        }
-
-        Object bean = _deserialize(p, ctxt);
-
-        if (bean != null && features.isEnabled(BeanValidationFeature.VALIDATE_BEAN_AFTER_CONSTRUCTION)) {
-            Set<? extends ConstraintViolation<?>> violations = validator.validate(bean);
-            if (violations != null && !violations.isEmpty()) {
-                throw new ConstraintViolationException(violations);
+        try {
+            if (validationAnnotation == null) {
+                return super.deserialize(p, ctxt);
             }
-        }
 
-        return bean;
+            Object bean = _deserialize(p, ctxt);
+
+            if (bean != null && features.isEnabled(BeanValidationFeature.VALIDATE_BEAN_AFTER_CONSTRUCTION)) {
+                Set<? extends ConstraintViolation<?>> violations = validator.validate(bean);
+                if (violations != null && !violations.isEmpty()) {
+                    throw new ConstraintViolationException(violations);
+                }
+            }
+
+            return bean;
+        } catch (JsonParseException exception) {
+            throw new ValidationException("Malformed input", exception);
+        }
     }
 
 
