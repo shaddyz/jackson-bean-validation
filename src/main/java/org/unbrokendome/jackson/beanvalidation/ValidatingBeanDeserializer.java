@@ -147,7 +147,7 @@ class ValidatingBeanDeserializer extends BeanDeserializer {
 
             return bean;
         } catch (JsonParseException exception) {
-            throw new ValidationException("Malformed input", exception);
+            throw new ConstraintViolationException("Malformed input", Collections.emptySet());
         }
     }
 

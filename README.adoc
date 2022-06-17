@@ -1,5 +1,5 @@
 = Jackson Bean Validation Module
-:version: 0.6.1-jakarta
+:version: 0.7.0-jakarta
 :groupId: org.unbroken-dome.jackson-bean-validation
 :artifactId: jackson-bean-validation
 

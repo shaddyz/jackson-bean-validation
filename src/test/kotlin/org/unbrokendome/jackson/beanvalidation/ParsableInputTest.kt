@@ -1,6 +1,7 @@
 package org.unbrokendome.jackson.beanvalidation
 
 import com.fasterxml.jackson.annotation.JsonCreator
+import jakarta.validation.ConstraintViolationException
 import jakarta.validation.ValidationException
 import org.junit.jupiter.api.Assertions.assertThrows
 import org.junit.jupiter.api.Test
@@ -15,6 +16,6 @@ class ParsableInputTest : AbstractValidationTest() {
     @Test
     fun `should throw validation exception on invalid JSON`() {
         val json = """{ invalid JSON"""
-        assertThrows(ValidationException::class.java) { objectMapper.readValue(json, TestBean::class.java) }
+        assertThrows(ConstraintViolationException::class.java) { objectMapper.readValue(json, TestBean::class.java) }
     }
 }
